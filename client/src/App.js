@@ -12,6 +12,7 @@ import {
   TemplateContext,
   useTemplateContextValue,
 } from "./contexts/templateContext";
+import Test from './Test'
 
 const App = () => {
   const loginContextValue = useUserContextValue();
@@ -35,6 +36,7 @@ const App = () => {
               />
             </Routes>
           </main>
+          <Test />
         </TemplateContext.Provider>
       </ProjectContext.Provider>
     </UserContext.Provider>
