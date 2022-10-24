@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { templates as templateData } from "../mockData";
+import { templates as mockData } from "../mockData";
 
 export const TemplateContext = createContext([]);
 
@@ -7,7 +7,7 @@ export function useTemplateContextValue() {
   const [templates, setTemplates] = useState([]);
 
   useEffect(() => {
-    const data = templateData; // make call to DB
+    const data = mockData; // make call to DB
     setTemplates(data);
   }, []);
 
