@@ -1,0 +1,39 @@
+
+personal level
+{
+  ID : "int",
+  first_name : "str",
+  last_name : "str",
+  clubs_house : "str",
+  individual_role : "str",
+  projects :[
+    {project_id : "int", role: "int"},
+    {project_id : "int", role: "int"}
+  ]
+}
+
+
+project level
+{
+  project_id : "int",
+  template_id : "int",
+  project_status : "int",
+  project_progress : "int",
+  time_start : "int",
+  time_deadline : "int",
+  team_size : "int",
+  team_members : [
+    {user_id : "int", project_role : "str"}
+  ]
+}
+
+template_level
+
+{
+  template_id : "int",
+  template_name : "str",
+  desciption : "str",
+  difficulty_rating : "int",
+  time_esitmate : "int",
+  team_estimate : "int",
+}
