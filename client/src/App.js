@@ -8,7 +8,7 @@ const App = () => {
   return (
     <main>
       <header>
-        <h2>Placeholder</h2>
+        <h1>ANDevelop</h1>
         <CreateProjectButton />
       </header>
       <Routes>
