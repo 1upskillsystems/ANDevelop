@@ -41,10 +41,9 @@ const handleInput = (e) => {
 }
 
 const handleChange = () => {
-console.log(searchInput)
+console.log("search input:", searchInput)
 
 if (searchInput.length > 0) {
-        //console.log(countryToDisplay)
         setCountryToDisplay(
             countries.filter((country) => {
     return country.name.match(searchInput);
