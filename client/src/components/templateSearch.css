@@ -1,0 +1,22 @@
+.template-search {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.template-search .hidden {
+    display: none;
+}
+
+.template-search header {
+    width: 100%;
+}
+
+.template-search .template-search-viewport,
+.template-search .template-search-details {
+    width: 50%;
+}
+
+.selected {
+    background-color: #eaeaea;
+}
