@@ -5,7 +5,7 @@ function UserSearch() {
   return (
     
      <div classname='App'>
-        <h1>search bar component</h1>
+        <h1>User Search</h1>
        <SearchBar/>
      </div>
 )}export default UserSearch

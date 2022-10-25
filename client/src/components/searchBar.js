@@ -91,9 +91,9 @@ return <div>
   </thead>
 <tbody>
 
-  {usersToDisplay.map((user) => {
+  {usersToDisplay.map((user, index) => {
 return (
-<tr >
+<tr key = {index}>
     <td> {user.first_name} </td>
     <td> {user.clubs_house} </td>
 </tr>
