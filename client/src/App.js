@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import CurrentProjects from "./components/currentProjects";
 import HomePage from "./components/HomePage";
-import CreateProjectButton from "./components/newProjectButton";
 import TemplateRoute from "./components/templateRoute";
 
 const App = () => {
@@ -10,7 +9,6 @@ const App = () => {
     <main>
       <header>
         <h1>ANDevelop</h1>
-        <CreateProjectButton />
       </header>
       <HomePage />
       <Routes>
