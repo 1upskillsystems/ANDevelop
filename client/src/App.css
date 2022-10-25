@@ -14,8 +14,8 @@ body {
 }
 
 #menu-container {
-  width: 50%;
-  border: medium solid black;
+  width: 60%;
+  border: 20px solid #666666;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
