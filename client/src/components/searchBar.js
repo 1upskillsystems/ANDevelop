@@ -3,10 +3,8 @@ import { UserContext } from "../contexts/userContext";
 
 
 const SearchBar = () => {
-
- const [searchInput, setSearchInput] = useState("");
-
- const [usersToDisplay, setUserToDisplay] = useState([])
+    const [searchInput, setSearchInput] = useState("");
+    const [usersToDisplay, setUserToDisplay] = useState([])
 
 // const users = UserContext(UserContext);
 const users = [
@@ -58,8 +56,9 @@ const users = [
 
 const handleInput = (e) => {
     e.preventDefault();
-  setSearchInput(e.target.value);
-}
+    setSearchInput(e.target.value);
+  };
+
 
 // could make this so table updates while user typing
 const handleChange = () => {
@@ -105,7 +104,7 @@ return (
 
 </div>
 
-// 
+
 };
 
 export default SearchBar;
