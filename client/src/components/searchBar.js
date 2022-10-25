@@ -1,52 +1,74 @@
 import React, {useState} from 'react'
+import { UserContext } from "../contexts/userContext";
 
 
 const SearchBar = () => {
 
  const [searchInput, setSearchInput] = useState("");
 
- const [countryToDisplay, setCountryToDisplay] = useState([])
+ const [usersToDisplay, setUserToDisplay] = useState([])
 
- const countries = [
+// const users = UserContext(UserContext);
+const users = [
+    {
+      id: 1,
+      first_name: "Caelyb",
+      last_name: "str",
+      clubs_house: "Somerville",
+      individual_role: "str",
+      projects: [
+        { project_id: "int", role: "int" },
+        { project_id: "int", role: "int" },
+      ],
+    },
+    {
+      id: 2,
+      first_name: "Andrew",
+      last_name: "str",
+      clubs_house: "Almeida",
+      individual_role: "str",
+      projects: [
+        { project_id: "int", role: "int" },
+        { project_id: "int", role: "int" },
+      ],
+    },
+    {
+        id: 2,
+        first_name: "Cameron",
+        last_name: "str",
+        clubs_house: "Almeida",
+        individual_role: "str",
+        projects: [
+          { project_id: "int", role: "int" },
+          { project_id: "int", role: "int" },
+        ],
+      },
+      {
+        id: 2,
+        first_name: "Cameron",
+        last_name: "str",
+        clubs_house: "Somerville",
+        individual_role: "str",
+        projects: [
+          { project_id: "int", role: "int" },
+          { project_id: "int", role: "int" },
+        ],
+      },
+  ];
 
-  { name: "Belgium", continent: "Europe" },
-  { name: "India", continent: "Asia" },
-  { name: "Bolivia", continent: "South America" },
-  { name: "Ghana", continent: "Africa" },
-  { name: "Japan", continent: "Asia" },
-  { name: "Canada", continent: "North America" },
-  { name: "New Zealand", continent: "Australasia" },
-  { name: "Italy", continent: "Europe" },
-  { name: "South Africa", continent: "Africa" },
-  { name: "China", continent: "Asia" },
-  { name: "Paraguay", continent: "South America" },
-  { name: "Usa", continent: "North America" },
-  { name: "France", continent: "Europe" },
-  { name: "Botswana", continent: "Africa" },
-  { name: "Spain", continent: "Europe" },
-  { name: "Senegal", continent: "Africa" },
-  { name: "Brazil", continent: "South America" },
-  { name: "Denmark", continent: "Europe" },
-  { name: "Mexico", continent: "South America" },
-  { name: "Australia", continent: "Australasia" },
-  { name: "Tanzania", continent: "Africa" },
-  { name: "Bangladesh", continent: "Asia" },
-  { name: "Portugal", continent: "Europe" },
-  { name: "Pakistan", continent:"Asia" },
-
-];
 const handleInput = (e) => {
     e.preventDefault();
   setSearchInput(e.target.value);
 }
 
+// could make this so table updates while user typing
 const handleChange = () => {
-console.log("search input:", searchInput)
 
 if (searchInput.length > 0) {
-        setCountryToDisplay(
-            countries.filter((country) => {
-    return country.name.match(searchInput);
+// this filters based on search input and put filtered data into a list
+        setUserToDisplay(
+            users.filter((user) => {
+    return user.first_name.match(searchInput);
 })); 
 }}
 
@@ -63,17 +85,17 @@ return <div>
 <table>
   <thead>
     <tr>
-    <th>Country</th>
-    <th>Continent</th>
+    <th> Name </th>
+    <th> Club </th>
     </tr>
   </thead>
 <tbody>
 
-  {countryToDisplay.map((country) => {
+  {usersToDisplay.map((user) => {
 return (
 <tr >
-    <td> {country.name} </td>
-    <td> {country.continent} </td>
+    <td> {user.first_name} </td>
+    <td> {user.clubs_house} </td>
 </tr>
 )
 })}
@@ -83,7 +105,7 @@ return (
 
 </div>
 
-
+// 
 };
 
 export default SearchBar;
