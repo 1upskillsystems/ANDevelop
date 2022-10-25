@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 const HomePage = () => {
   return (
     <div>
+      <h1>ANDevelop</h1>
       <h2>Home</h2>
       <div id="menu-container">
         <Button>Existing Projects</Button>
