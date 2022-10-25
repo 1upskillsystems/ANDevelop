@@ -14,10 +14,9 @@ body {
 }
 
 #menu-container {
-  width: 60%;
-  border: 20px solid #666666;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-left: 20%;
+  margin-left: 25%;
 }

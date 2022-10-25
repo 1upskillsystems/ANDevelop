@@ -45,9 +45,12 @@ const App = () => {
                 path="/choose-existing-template" 
                 element={<TemplateSearch />}
               />
+              <Route
+                path="/test"
+                element={<Test />}
+              />
             </Routes>
           </main>
-          <Test />
         </TemplateContext.Provider>
       </ProjectContext.Provider>
     </UserContext.Provider>
