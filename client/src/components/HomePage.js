@@ -1,17 +1,17 @@
 import React from "react";
-import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 
 const HomePage = () => {
   return (
     <div>
       <h2>HomePage</h2>
-      <ListGroup horizontal>
-        <ListGroup.Item>Existing Projects</ListGroup.Item>
-        <ListGroup.Item>Cretate New Project</ListGroup.Item>
-        <ListGroup.Item>Project Reviews</ListGroup.Item>
-        <ListGroup.Item>Archived Projects</ListGroup.Item>
-        <ListGroup.Item>User Search</ListGroup.Item>
-      </ListGroup>
+      <div id="menu-container">
+        <Button>Existing Projects</Button>
+        <Button>Cretate New Project</Button>
+        <Button>Project Reviews</Button>
+        <Button>Archived Projects</Button>
+        <Button>User Search</Button>
+      </div>
     </div>
   );
 };
