@@ -12,6 +12,7 @@ import {
   useTemplateContextValue,
 } from "./contexts/templateContext";
 import Test from "./Test";
+import "./App.css";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
