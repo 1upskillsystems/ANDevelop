@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
+import TemplateSearch from "./components/templateSearch";
 import { UserContext, useUserContextValue } from "./contexts/userContext";
 import {
   ProjectContext,
@@ -35,6 +36,10 @@ const App = () => {
                 path="/current-projects"
                 element={<CurrentProjects />}
               ></Route>
+              <Route 
+                path="/choose-existing-template" 
+                element={<TemplateSearch />}
+              />
             </Routes>
           </main>
           <Test />
