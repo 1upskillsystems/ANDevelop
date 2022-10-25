@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import CurrentProjects from "./components/currentProjects";
-import CreateProjectButton from "./components/newProjectButton";
+import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
 import { UserContext, useUserContextValue } from "./contexts/userContext";
 import {
@@ -26,8 +26,8 @@ const App = () => {
           <main>
             <header>
               <h1>ANDevelop</h1>
-              <CreateProjectButton />
             </header>
+            <HomePage />
             <Routes>
               <Route exact path="/" element={<CurrentProjects />} />
               <Route
