@@ -1,0 +1,50 @@
+.add-button {
+  border: solid black 4px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#add-role-button {
+  display: flex;
+  margin-bottom: 20px;
+  border: none;
+  padding: 0;
+}
+
+#add-role-button:hover > #red-button {
+  fill: #ea9999;
+}
+#add-role-button:hover > #white-button {
+  background-color: white;
+}
+
+#add-role-text {
+  display: block;
+  margin: auto 0;
+  opacity: 1 !important;
+}
+
+.role-button-separator {
+  margin-bottom: 20px;
+  width: 100%;
+  border-top: 3px solid black;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+#display-picture {
+  width: 50px;
+  height: 50px;
+  border: solid black 4px;
+  margin-right: 20px;
+
+}
+
+#assigned-role-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#assigned-role-container p {
+    margin: 0;
+}

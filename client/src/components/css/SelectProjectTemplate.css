@@ -1,9 +1,6 @@
 #display-container {
   display: flex;
   flex-direction: row;
-  border: solid black 3px;
-  padding: 0;
-  margin: 60px;
 }
 
 #left-content {
@@ -43,3 +40,24 @@
   border: solid black 2px;
   border-radius: 2px;
 }
+
+#back-button {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin: auto 0;
+  min-width: 70px;
+}
+
+#title-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+#create-proj-title {
+  display: block;
+  margin: 0 auto;
+  padding-right: 70px;
+}
+

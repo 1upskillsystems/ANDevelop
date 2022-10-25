@@ -46,7 +46,7 @@ const App = () => {
                 element={<Test />}
               />
               <Route
-                path="/setup-project"
+                path="/create-template"
                 element={<SelectProjectTemplate />}
               />
             </Routes>
