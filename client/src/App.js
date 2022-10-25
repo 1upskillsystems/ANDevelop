@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import CurrentProjects from "./components/currentProjects";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
+import TemplateSearch from "./components/templateSearch";
 import { UserContext, useUserContextValue } from "./contexts/userContext";
 import {
   ProjectContext,
@@ -33,6 +34,10 @@ const App = () => {
               <Route
                 path="/choose-template-route"
                 element={<TemplateRoute />}
+              />
+              <Route 
+                path="/choose-existing-template" 
+                element={<TemplateSearch />}
               />
             </Routes>
           </main>

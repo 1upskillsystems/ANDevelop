@@ -21,7 +21,7 @@ function TemplateRoute() {
                         </p>
                 </section>
                 <section id="choose-template">
-                    <NavLink to="">
+                    <NavLink to="/choose-existing-template">
                         <button className="">Select exiting template</button>
                     </NavLink>
                         <p>
