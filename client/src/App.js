@@ -13,6 +13,7 @@ import {
   useTemplateContextValue,
 } from "./contexts/templateContext";
 import Test from './Test'
+import SelectProjectTemplate from "./components/SelectProjectTemplate";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
@@ -26,7 +27,7 @@ const App = () => {
           <main>
             <header>
               <h1>ANDevelop</h1>
-            </header>
+              </header>
             <HomePage />
             <Routes>
               <Route exact path="/" element={<CurrentProjects />} />
@@ -34,9 +35,16 @@ const App = () => {
                 path="/choose-template-route"
                 element={<TemplateRoute />}
               />
+              <Route
+                path="/test"
+                element={<Test />}
+              />
+              <Route
+                path="/setup-project"
+                element={<SelectProjectTemplate />}
+              />
             </Routes>
           </main>
-          <Test />
         </TemplateContext.Provider>
       </ProjectContext.Provider>
     </UserContext.Provider>
