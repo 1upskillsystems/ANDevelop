@@ -3,7 +3,9 @@ import SearchBar from './searchBar'
 
 function UserSearch() {
   return (
+    
      <div classname='App'>
+        <h1>search bar component</h1>
        <SearchBar/>
      </div>
 )}export default UserSearch
