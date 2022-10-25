@@ -1,0 +1,45 @@
+#display-container {
+  display: flex;
+  flex-direction: row;
+  border: solid black 3px;
+  padding: 0;
+  margin: 60px;
+}
+
+#left-content {
+  background-color: #eeeeee;
+  width: 60%;
+  padding: 30px;
+}
+
+#right-sidebar-content {
+  background-color: #ea9999;
+  width: 40%;
+  border-left: solid black 3px;
+  padding: 30px;
+}
+
+#project-name {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.number-input-field {
+  margin: 0 10px;
+  width: 80px;
+}
+
+#deadline-input-field {
+  margin-bottom: 40px;
+}
+
+.input {
+  border: solid black 2px;
+  border-radius: 2px;
+}
