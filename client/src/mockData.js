@@ -49,18 +49,18 @@ export const projects = [
 export const templates = [
   {
     id: 1,
-    template_name: "str",
-    desciption: "str",
-    difficulty_rating: "int",
-    time_esitmate: "int",
-    team_estimate: "int",
+    template_name: "str1",
+    desciption: "str1",
+    difficulty_rating: "int1",
+    time_esitmate: "int1",
+    team_estimate: "int1",
   },
   {
     id: 2,
-    template_name: "str",
-    desciption: "str",
-    difficulty_rating: "int",
-    time_esitmate: "int",
-    team_estimate: "int",
+    template_name: "str2",
+    desciption: "str2",
+    difficulty_rating: "int2",
+    time_esitmate: "int2",
+    team_estimate: "int2",
   },
 ];

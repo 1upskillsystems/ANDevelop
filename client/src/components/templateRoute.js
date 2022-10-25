@@ -1,14 +1,15 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function TemplateRoute() {
 
     return (
         <section>
             <header>
-                <NavLink to="/">
-                    <button>Close</button>
-                </NavLink>
+          <NavLink to="/">
+          <Button variant="dark">Close</Button>
+        </NavLink>
                 <h2>Create New Project</h2>
             </header>
             <div>
@@ -21,7 +22,7 @@ function TemplateRoute() {
                         </p>
                 </section>
                 <section id="choose-template">
-                    <NavLink to="">
+                    <NavLink to="/choose-existing-template">
                         <button className="">Select exiting template</button>
                     </NavLink>
                         <p>
@@ -30,8 +31,22 @@ function TemplateRoute() {
                 </section>
             </div>
         </section>
-    );
-
+        <section id="choose-template">
+          <NavLink to="">
+            <button className="">Select exiting template</button>
+          </NavLink>
+          <p>
+            Mattis pellentesque id nibh tortor id aliquet lectus. Ut sem nulla
+            pharetra diam. Lobortis feugiat vivamus at augue. Faucibus interdum
+            posuere lorem ipsum dolor sit amet. Varius duis at consectetur lorem
+            donec massa. Massa tincidunt nunc pulvinar sapien et ligula
+            ullamcorper malesuada proin. Nunc sed velit dignissim sodales ut eu.
+            Integer vitae justo eget magna fermentum iaculis eu non diam.
+          </p>
+        </section>
+      </div>
+    </section>
+  );
 }
 
 export default TemplateRoute;
