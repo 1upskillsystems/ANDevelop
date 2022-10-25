@@ -1,5 +1,5 @@
 body {
-  background-color: #dddddd;
+  background-color: #dddddd !important;
 }
 #home-header {
   display: flex;
@@ -8,4 +8,16 @@ body {
 
 .menu-item {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#menu-container {
+  width: 50%;
+  border: medium solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-left: 20%;
 }
