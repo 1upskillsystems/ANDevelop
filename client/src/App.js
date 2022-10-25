@@ -13,6 +13,7 @@ import {
 } from "./contexts/templateContext";
 import Test from "./Test";
 import "./App.css";
+import CurrentProjects from "./components/currentProjects";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
@@ -30,6 +31,10 @@ const App = () => {
                 path="/choose-template-route"
                 element={<TemplateRoute />}
               />
+              <Route
+                path="/current-projects"
+                element={<CurrentProjects />}
+              ></Route>
             </Routes>
           </main>
           <Test />

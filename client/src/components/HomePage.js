@@ -17,7 +17,11 @@ const HomePage = () => {
       <main id="menu-container">
         <div className="menu-item">
           <FolderFill size={90} />
-          <Button variant="dark">Existing Projects</Button>
+          <Button variant="dark">
+            <NavLink className="nav-link" to="/current-projects">
+              Existing Projects
+            </NavLink>
+          </Button>
         </div>
         <div className="menu-item">
           <PlusCircleFill size={90} />
