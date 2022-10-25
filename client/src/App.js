@@ -36,7 +36,7 @@ const App = () => {
               <Route
                 path="/current-projects"
                 element={<CurrentProjects />}
-              ></Route>
+              />
               <Route 
                 path="/choose-existing-template" 
                 element={<TemplateSearch />}

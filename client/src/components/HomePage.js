@@ -6,14 +6,11 @@ import { FolderFill } from "react-bootstrap-icons";
 import { PlusCircleFill } from "react-bootstrap-icons";
 import { PersonFill } from "react-bootstrap-icons";
 import { ArchiveFill } from "react-bootstrap-icons";
+import PageContainer from "./PageContainer";
 
 const HomePage = () => {
   return (
-    <div>
-      <header id="home-header">
-        <h1>ANDevelop</h1>
-        <h2>Welcome</h2>
-      </header>
+    <PageContainer pageTitle="Welcome">
       <main id="menu-container">
         <div className="menu-item">
           <FolderFill size={90} />
@@ -40,7 +37,7 @@ const HomePage = () => {
           <Button variant="dark">Archived Projects</Button>
         </div>
       </main>
-    </div>
+    </PageContainer>
   );
 };
 

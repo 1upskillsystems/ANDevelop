@@ -1,0 +1,43 @@
+#page {
+  background-color: #dddddd;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  height: 100vh;
+}
+
+#page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  color: #cf2a27;
+}
+
+#and-develop {
+  font-size: 2.5rem;
+}
+
+#page-title {
+  margin: 0;
+}
+
+#outer-container {
+  border: solid black 4px;
+  padding: 10px;
+  background-color: #666666;
+  border-radius: 3px;
+}
+
+#inner-container {
+  border: solid black 4px;
+  border-radius: 3px;
+  background-color: #dddddd;
+  min-height: 50vh;
+  padding: 30px;
+}
+
+#button {
+  margin-top: -46px;
+  margin-bottom: 8px;
+}
