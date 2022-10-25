@@ -3,19 +3,43 @@ import { Route, Routes } from "react-router-dom";
 import CurrentProjects from "./components/currentProjects";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
+import { UserContext, useUserContextValue } from "./contexts/userContext";
+import {
+  ProjectContext,
+  useProjectContextValue,
+} from "./contexts/projectContext";
+import {
+  TemplateContext,
+  useTemplateContextValue,
+} from "./contexts/templateContext";
+import Test from './Test'
 
 const App = () => {
+  const loginContextValue = useUserContextValue();
+  const projectContextValue = useProjectContextValue();
+  const templateContextValue = useTemplateContextValue();
+
   return (
-    <main>
-      <header>
-        <h1>ANDevelop</h1>
-      </header>
-      <HomePage />
-      <Routes>
-        <Route exact path="/" element={<CurrentProjects />} />
-        <Route path="/choose-template-route" element={<TemplateRoute />} />
-      </Routes>
-    </main>
+    <UserContext.Provider value={loginContextValue}>
+      <ProjectContext.Provider value={projectContextValue}>
+        <TemplateContext.Provider value={templateContextValue}>
+          <main>
+            <header>
+              <h1>ANDevelop</h1>
+            </header>
+            <HomePage />
+            <Routes>
+              <Route exact path="/" element={<CurrentProjects />} />
+              <Route
+                path="/choose-template-route"
+                element={<TemplateRoute />}
+              />
+            </Routes>
+          </main>
+          <Test />
+        </TemplateContext.Provider>
+      </ProjectContext.Provider>
+    </UserContext.Provider>
   );
 };
 
