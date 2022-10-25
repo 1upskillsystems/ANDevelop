@@ -1,22 +1,18 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function CurrentProjects() {
-
-    return (
-        <section>
-            <article>
-                A live project will be displayed here
-            </article>
-            <article>
-                A live project will be displayed here
-            </article>
-            <article>
-                A live project will be displayed here
-            </article>
-        </section>
-    )
-
-};
+  return (
+    <section>
+      <NavLink to="/">
+        <Button variant="dark">Close</Button>
+      </NavLink>
+      <article>A live project will be displayed here</article>
+      <article>A live project will be displayed here</article>
+      <article>A live project will be displayed here</article>
+    </section>
+  );
+}
 
 export default CurrentProjects;

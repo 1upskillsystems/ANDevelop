@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import CurrentProjects from "./components/currentProjects";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
 import TemplateSearch from "./components/templateSearch";
@@ -13,7 +12,9 @@ import {
   TemplateContext,
   useTemplateContextValue,
 } from "./contexts/templateContext";
-import Test from './Test'
+import Test from "./Test";
+import "./App.css";
+import CurrentProjects from "./components/currentProjects";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
@@ -25,16 +26,16 @@ const App = () => {
       <ProjectContext.Provider value={projectContextValue}>
         <TemplateContext.Provider value={templateContextValue}>
           <main>
-            <header>
-              <h1>ANDevelop</h1>
-            </header>
-            <HomePage />
             <Routes>
-              <Route exact path="/" element={<CurrentProjects />} />
+              <Route exact path="/" element={<HomePage />} />
               <Route
                 path="/choose-template-route"
                 element={<TemplateRoute />}
               />
+              <Route
+                path="/current-projects"
+                element={<CurrentProjects />}
+              ></Route>
               <Route 
                 path="/choose-existing-template" 
                 element={<TemplateSearch />}
