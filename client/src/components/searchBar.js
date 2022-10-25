@@ -47,7 +47,7 @@ if (searchInput.length > 0) {
         setCountryToDisplay(
             countries.filter((country) => {
     return country.name.match(searchInput);
-})); console.log(countryToDisplay)
+})); 
 }}
 
 return <div>
@@ -70,12 +70,14 @@ return <div>
 <tbody>
 
   {countryToDisplay.map((country) => {
-
+return (
 <tr >
     <td> {country.name} </td>
     <td> {country.continent} </td>
 </tr>
+)
 })}
+
 </tbody>
 </table>
 
