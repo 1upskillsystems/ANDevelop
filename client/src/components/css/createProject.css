@@ -32,6 +32,10 @@
   width: 80px;
 }
 
+.date-input-field {
+  margin: 0 10px;
+}
+
 #deadline-input-field {
   margin-bottom: 40px;
 }

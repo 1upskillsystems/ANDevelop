@@ -17,6 +17,9 @@
 #add-role-button:hover > #white-button {
   background-color: white;
 }
+#add-role-button:hover #add-role-text {
+  text-decoration: underline;
+}
 
 #add-role-text {
   display: block;
@@ -37,14 +40,13 @@
   height: 50px;
   border: solid black 4px;
   margin-right: 20px;
-
 }
 
 #assigned-role-container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 #assigned-role-container p {
-    margin: 0;
+  margin: 0;
 }

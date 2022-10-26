@@ -15,7 +15,7 @@ import {
 import Test from "./Test";
 import "./App.css";
 import CurrentProjects from "./components/currentProjects";
-import SelectProjectTemplate from "./components/SelectProjectTemplate";
+import CreateProject from "./components/CreateProject";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
@@ -42,12 +42,8 @@ const App = () => {
                 element={<TemplateSearch />}
               />
               <Route
-                path="/test"
-                element={<Test />}
-              />
-              <Route
-                path="/create-template"
-                element={<SelectProjectTemplate />}
+                path="/create-project"
+                element={<CreateProject />}
               />
             </Routes>
           </main>
