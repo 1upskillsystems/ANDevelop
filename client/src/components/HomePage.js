@@ -28,6 +28,16 @@ const HomePage = () => {
             </NavLink>
           </Button>
         </div>
+
+        <div className="menu-item">
+          <PersonFill size={90} />
+          <Button variant="dark">
+            <NavLink className="nav-link" to="/userSearch">
+              UserSearch
+            </NavLink>
+          </Button>
+        </div>
+
         <div className="menu-item">
           <PersonFill size={90} />
           <Button variant="dark">Project Reviews</Button>
