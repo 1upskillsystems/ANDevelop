@@ -13,7 +13,7 @@ export function useTemplateContextValue() {
   };
 
   useEffect(() => {
-    fetchTemplates();
+    fetchTemplates(); // make call to backend service
   }, []);
 
   return {
