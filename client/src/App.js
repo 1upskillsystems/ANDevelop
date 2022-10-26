@@ -3,7 +3,12 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
 import TemplateSearch from "./components/templateSearch";
-import { UserContext, useUserContextValue } from "./contexts/userContext";
+import CreateProject from "./components/createProject";
+import CurrentProjects from "./components/currentProjects";
+import { 
+  UserContext, 
+  useUserContextValue 
+} from "./contexts/userContext";
 import {
   ProjectContext,
   useProjectContextValue,
@@ -12,10 +17,7 @@ import {
   TemplateContext,
   useTemplateContextValue,
 } from "./contexts/templateContext";
-import Test from "./Test";
 import "./App.css";
-import CurrentProjects from "./components/currentProjects";
-import CreateProject from "./components/CreateProject";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
