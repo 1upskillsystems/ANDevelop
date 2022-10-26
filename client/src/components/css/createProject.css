@@ -1,0 +1,15 @@
+.create-project-overview {
+    display: flex;
+    flex-direction: row;
+}
+
+.team-overview {
+    width: 60%;
+}
+
+.template-overview {
+    width: 40%;
+    color: white;
+    background: #ea9999;
+    padding: 20px;
+}
