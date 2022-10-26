@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import PageContainer from "./PageContainer";
 import { ProjectContext } from "../contexts/projectContext";
@@ -20,7 +20,6 @@ function CurrentProjects() {
     const current = Math.floor(Date.now() / 1000);
     const total = +deadline - +started;
     const elaps = current - started;
-    
     return Math.round((elaps / total) * 100) + "%";
   }
 
@@ -39,21 +38,49 @@ function CurrentProjects() {
               const progress = calcTime(proj.time_start, proj.time_deadline);
 
               return (
-                <Accordion.Item eventKey="0" key={i}>
+                <Accordion.Item eventKey={i} key={i}>
                     <Accordion.Header>
                       <div className="current-projects-header-info">
-                        <div>Project name: {proj.project_name} - (id: {proj.project_id})</div>
-                        <div>Template name: {currentTemplate.template_name}</div>
+                        <div className="project-header-info">
+                          <div className="project-name">{proj.project_name}</div>
+                          <div className="project-id">Project ID: {proj.project_id}</div>
+                        </div>
                         <div className="progress-wrapper">
                           <div className="progress-bar" style={{width: progress}}></div>
                         </div>
                       </div>
                     </Accordion.Header>
                     <Accordion.Body>
-                      {currentTemplate.desciption}
+                      <p><strong>Template used:</strong> {currentTemplate.template_name}</p>
+                      <div className="project-date-info">
+                        <div><p><strong>Date started:</strong> {new Date(proj.time_start * 1000).toLocaleString()}</p></div>
+                        <div><p><strong>Deadline:</strong> {new Date(proj.time_deadline * 1000).toLocaleString()}</p></div>
+                      </div>
+                      <p><strong>Project Description:</strong></p>
+                      <p>{currentTemplate.desciption}</p>
+                      <hr />
+                      <div className="project-members-wrap">
+                        {proj.team_members.map((member, i) => {
+                          let role = "Developer";
+                          if (member.role) role = member.role;
+                          return (
+                            <article key={i}>
+                              <h5>{role}</h5>
+                              <div className="member">
+                                <div className="member-img">img</div>
+                                <div className="member-details">
+                                  <div><strong>{member.name}</strong></div>
+                                  <div>({member.individual_role} - {member.clubs_house})</div>
+                                </div>
+                              </div>
+                            </article>
+                          );
+                        })}
+                      </div>
                     </Accordion.Body>
                 </Accordion.Item>
               );
+              
             }
           })}
         </Accordion>
