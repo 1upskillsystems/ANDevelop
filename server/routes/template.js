@@ -20,7 +20,7 @@ templateRoutes.route("/templates").get(function (req, res) {
     });
 });
 
-// This section will help you get a single record by id
+// This section will help you get a single template by id
 templateRoutes.route("/template/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
