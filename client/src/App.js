@@ -3,7 +3,12 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
 import TemplateSearch from "./components/templateSearch";
-import { UserContext, useUserContextValue } from "./contexts/userContext";
+import CreateProject from "./components/createProject";
+import CurrentProjects from "./components/currentProjects";
+import { 
+  UserContext, 
+  useUserContextValue 
+} from "./contexts/userContext";
 import {
   ProjectContext,
   useProjectContextValue,
@@ -14,7 +19,6 @@ import {
 } from "./contexts/templateContext";
 import Test from "./Test";
 import "./App.css";
-import CurrentProjects from "./components/currentProjects";
 import UserSearch from "./components/userSearch";
 
 const App = () => {
@@ -44,6 +48,10 @@ const App = () => {
               <Route 
                 path="/choose-existing-template" 
                 element={<TemplateSearch />}
+              />
+              <Route
+                path="/create-project"
+                element={<CreateProject />}
               />
               <Route
                 path="/test"

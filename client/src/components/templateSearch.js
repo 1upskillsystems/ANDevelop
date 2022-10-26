@@ -1,19 +1,22 @@
 import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { TemplateContext } from "../contexts/templateContext";
+import PageContainer from "./PageContainer";
 import Button from "react-bootstrap/Button";
-import "./templateSearch.css";
+import "./css/templateSearch.css";
 
 function TemplateSearch() {
   const temp = useContext(TemplateContext);
   let [templateObj, setTemplateObj] = useState([]);
 
   return (
+    <PageContainer
+      pageTitle="Template select"
+      buttonText="Back"
+      buttonTo="/choose-template-route"
+    >
     <section className="template-search">
       <header>
-        <NavLink to="/choose-template-route">
-          <Button variant="dark">Close</Button>
-        </NavLink>
         <h2>Please select a template to start your project with</h2>
       </header>
       <div className="template-search-viewport">
@@ -51,11 +54,17 @@ function TemplateSearch() {
         </div>
       </div>
       <footer>
-        <Button variant="dark" disabled={templateObj == 0 ? "disabled" : ""}>
-          Assemble project
-        </Button>
+        <NavLink
+          to={"/create-project"}
+          state={{templateInfo: templateObj}}
+        >
+          <Button variant="dark" disabled={templateObj == 0 ? "disabled" : ""}>
+            Assemble project
+          </Button>
+        </NavLink>
       </footer>
     </section>
+  </PageContainer>
   );
 }
 
