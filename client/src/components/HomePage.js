@@ -30,7 +30,7 @@ const HomePage = () => {
         </div>
 
         <div className="menu-item">
-          <PlusCircleFill size={90} />
+          <PersonFill size={90} />
           <Button variant="dark">
             <NavLink className="nav-link" to="/userSearch">
               UserSearch

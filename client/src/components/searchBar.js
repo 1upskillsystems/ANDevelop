@@ -7,6 +7,8 @@ const SearchBar = () => {
     const [usersToDisplay, setUserToDisplay] = useState([])
 
 // const users = UserContext(UserContext);
+
+// mock user data
 const users = [
     {
       id: 1,
@@ -54,6 +56,11 @@ const users = [
       },
   ];
 
+function userAdd(user) {
+// this function would ideally take user id and export so use could be added to a project
+return console.log(user.id)
+}
+
 const handleInput = (e) => {
     e.preventDefault();
     setSearchInput(e.target.value);
@@ -65,14 +72,17 @@ const handleChange = () => {
 
 if (searchInput.length > 0) {
 // this filters based on search input and put filtered data into a list
+
         setUserToDisplay(
             users.filter((user) => {
-    return user.first_name.match(searchInput);
+    return (user.first_name.toUpperCase())
+    .match(searchInput.toUpperCase());
 })); 
 }}
 
-return <div>
 
+return <div>
+    
 <input
    type="search"
    placeholder="Search here"
@@ -90,12 +100,14 @@ return <div>
   </thead>
 <tbody>
 
+
   {usersToDisplay.map((user, index) => {
-return (
-<tr key = {index}>
-    <td> {user.first_name} </td>
-    <td> {user.clubs_house} </td>
-</tr>
+    return (
+        <tr key = {index} >
+            <td > {user.first_name} </td>
+            <td > {user.clubs_house} </td>
+            <td> <button type = "submit" onClick={userAdd(user)}>  Add User </button> </td>
+        </tr>
 )
 })}
 
