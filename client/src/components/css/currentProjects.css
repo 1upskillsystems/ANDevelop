@@ -1,0 +1,15 @@
+.current-projects-header-info {
+    width: 95%;
+}
+
+.progress-wrapper {
+    width: 100%;
+    height: 20px;
+    background: gray;
+    margin: 10px 10px 10px 0;
+}
+
+.progress-bar {
+    height: 20px;
+    background: green!important;
+}

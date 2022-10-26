@@ -1,15 +1,64 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import Accordion from 'react-bootstrap/Accordion';
 import PageContainer from "./PageContainer";
+import { ProjectContext } from "../contexts/projectContext";
+import { TemplateContext } from "../contexts/templateContext";
+import "./css/currentProjects.css";
 
 function CurrentProjects() {
+  const projects = useContext(ProjectContext);
+  const templates = useContext(TemplateContext);
+  
+  // Used to search and return template obj through matching template ID
+  const findTemplate = id => {
+    let matchedTemp = null;
+    templates.templates.forEach(elem => (elem.id === id) ? matchedTemp = elem : null);
+    return matchedTemp;
+  }
+
+  const calcTime = (started, deadline) => {
+    const startedUnix = Math.floor(new Date(started).getTime() / 1000);
+    const deadlineUnix = Math.floor(new Date(deadline).getTime() / 1000);
+    const currentUnix = Math.floor(Date.now() / 1000);
+
+    const total = +deadlineUnix - +startedUnix;
+    const elaps = currentUnix - startedUnix;
+    
+    return Math.round((elaps / total) * 100) + "%";
+  }
+
   return (
-    <PageContainer buttonText="Close" buttonTo="/">
+    <PageContainer 
+      pageTitle="Active projects"
+      buttonText="Close" 
+      buttonTo="/"
+    >
       <section>
-        <article>A live project will be displayed here</article>
-        <article>A live project will be displayed here</article>
-        <article>A live project will be displayed here</article>
+        <Accordion>
+          {projects.projects.map((proj, i) => {
+            if (proj.project_status === 1) {
+              const currentTemplate = findTemplate(proj.template_id);
+              const progress = calcTime(proj.time_start, proj.time_deadline);
+              return (
+                <Accordion.Item eventKey="0" key={i}>
+                    <Accordion.Header>
+                      <div className="current-projects-header-info">
+                        <div>{currentTemplate.template_name}</div>
+                        <div className="progress-wrapper">
+                          <div className="progress-bar" style={{width: progress}}></div>
+                        </div>
+                      </div>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                      {currentTemplate.desciption}
+                    </Accordion.Body>
+                </Accordion.Item>
+              );
+            }
+          })}
+        </Accordion>
       </section>
     </PageContainer>
   );
