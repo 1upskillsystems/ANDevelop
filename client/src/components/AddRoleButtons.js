@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { PlusCircleFill } from "react-bootstrap-icons";
 import { Plus } from "react-bootstrap-icons";
 import "./css/roleButton.css";
+import Background from "../koala.jpg";
 
 const RoleButton = ({ text, red }) => {
   const Icon = (props) =>
@@ -22,7 +23,15 @@ const RoleButton = ({ text, red }) => {
 const AssignedRole = ({ role, name }) => {
   return (
     <div id="assigned-role-container">
-      <div id="display-picture"/>
+      <div
+        id="display-picture"
+        style={{
+          backgroundImage: `url(${Background})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
       <div>
         <p>{role}</p>
         <p>{name}</p>
@@ -31,43 +40,28 @@ const AssignedRole = ({ role, name }) => {
   );
 };
 
-const AddRoleButtons = ({ members }) => {
-  let scrumMasterAssigned = false;
-  let techLeadAssigned = false;
-  let developerAssigned = false;
-
-  for (let index = 0; index < members?.length; index++) {
-    scrumMasterAssigned = members[index]?.project_role === "scrum_master";
-    techLeadAssigned = members[index]?.project_role === "tech_lead";
-    developerAssigned = members[index]?.project_role === "developer";
-  }
-
+const AddRoleButtons = ({ members, setMembers }) => {
   return (
-    <>
-      {scrumMasterAssigned ? (
-        <AssignedRole role="Scrum Master" name="todo" />
-      ) : (
-        <RoleButton red text="Add Scrum Master" />
-      )}
-
-      <hr className="role-button-separator" />
-
-      {techLeadAssigned ? (
-        <AssignedRole role="Tech Lead" name="todo" />
-      ) : (
-        <RoleButton red text="Add Tech Lead" />
-      )}
-
-      <hr className="role-button-separator" />
-
-      {developerAssigned ? (
-        <AssignedRole role="Developer" name="todo" />
-      ) : (
-        <RoleButton red text="Add Developer" />
-      )}
+    <div id="select-users-container">
+      {members.map((member, index) => {
+        if (!member.name)
+          return (
+            <div key={index}>
+              <RoleButton red text={`Add ${member.role}`} key={index} />
+              {index < 3 && <hr className="role-button-separator" />}
+            </div>
+          );
+        else
+          return (
+            <div key={index}>
+              <AssignedRole role={member.role} name={member.name} key={index} />
+              {index < 3 && <hr className="role-button-separator" />}
+            </div>
+          );
+      })}
 
       <RoleButton text="Add Additional Developers" />
-    </>
+    </div>
   );
 };
 

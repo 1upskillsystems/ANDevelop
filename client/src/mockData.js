@@ -52,8 +52,8 @@ export const templates = [
     template_name: "Mock Template Name",
     description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     difficulty_rating: "int1",
-    time_esitmate: "int1",
-    team_estimate: "int1",
+    time_esitmate: 10,
+    team_estimate: 6,
   },
   {
     id: 2,
