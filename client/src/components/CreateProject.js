@@ -18,7 +18,6 @@ const CreateProject = () => {
     formState: { isDirty },
   } = useForm();
 
-  // let [template, setTemplate] = useState({});
   let [members, setMembers] = useState([
     {
       role: "Scrum Master",
@@ -55,29 +54,11 @@ const CreateProject = () => {
     }
   }
 
-  // let [projectInfo, setProjectInfo] = useState({
-  //   project_id: null, // to sort rng
-  //   template_id: null, // updates in useEffect below with data from 'template' state
-  //   project_status: 0, // 0 initiated, 1 active, 2 archived
-  //   project_progress: null, // seek clarification here
-  //   time_start: null, // will set when start button clicked
-  //   time_deadline: null, // set in template window component
-  //   team_members: members,
-  //   team_size: members.length,
-  // });
-
-  // useEffect(() => {
-  //   setTemplate(templateInfo);
-  //   // setProjectInfo((prev) => ({ ...prev, ["template_id"]: template.id }));
-  // }, []);
-
-  // // console.log(templateInfo, template, projectInfo);
-
   const onSubmit = (e) => {
     const time_start = new Date().valueOf();
     console.log("This will update the DB", {
-      project_id: null, // to sort rng
-      template_id: templateInfo.id,
+      project_id: templateInfo._id, // to check
+      template_id: templateInfo.template_id, // to check
       project_status: 0, // 0 initiated, 1 active, 2 archived
       project_progress: null, // seek clarification here
       time_start,
@@ -101,18 +82,24 @@ const CreateProject = () => {
 
         <div id="right-sidebar-content">
           <h3 id="project-name">{templateInfo?.template_name}</h3>
-          <p id="description">{templateInfo?.description}</p>
+          <p id="description">{templateInfo?.desciption}</p>
           <ul>
             <li>
               Suggested time:{" "}
               <span className="bold-font">
-                {templateInfo.time_esitmate} days
+                {Math.round(templateInfo.time_esitmate/86400)} days
               </span>
             </li>
             <li>
               Suggested team size:{" "}
               <span className="bold-font">
                 {templateInfo.team_estimate} people
+              </span>
+            </li>
+            <li>
+              Difficulty rating:{" "}
+              <span className="bold-font">
+                {templateInfo.difficulty_rating}/10
               </span>
             </li>
           </ul>
