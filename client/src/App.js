@@ -5,6 +5,7 @@ import TemplateRoute from "./components/templateRoute";
 import TemplateSearch from "./components/templateSearch";
 import CreateProject from "./components/CreateProject";
 import CurrentProjects from "./components/currentProjects";
+import ArchivedProjects from "./components/archivedProjects";
 import { 
   UserContext, 
   useUserContextValue 
@@ -39,6 +40,10 @@ const App = () => {
               <Route
                 path="/current-projects"
                 element={<CurrentProjects />}
+              ></Route>
+              <Route
+                path="/archived-projects"
+                element={<ArchivedProjects />}
               ></Route>
               <Route
                 path="/userSearch"

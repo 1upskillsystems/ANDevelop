@@ -3,7 +3,7 @@
     border-radius: 10px;
 }
 
-.current-projects-header-info {
+.archived-projects-header-info {
     width: 95%;
 }
 
@@ -15,9 +15,9 @@
     padding: 5px;
 }
 
-.current-projects-header-info .progress-bar {
+.archived-projects-header-info .progress-bar {
     height: 100%;
-    background: #18A558!important;
+    background: gray!important;
 }
 
 .project-header-info,
