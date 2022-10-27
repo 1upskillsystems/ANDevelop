@@ -12,9 +12,32 @@
 }
 
 table {
+  width: 100%;
   margin-top: 20px;
+}
+
+th,
+td {
+  width: 50%;
+  padding: 5px;
+}
+
+tr {
+  background-color: #eaeaea;
+}
+
+thead tr {
+  border-bottom: 2px solid red;
+}
+
+tr:nth-child(odd){
+  background-color: #dddddd;
 }
 
 td {
     min-width: 120px; 
+}
+
+.hidden {
+  display: none;
 }
