@@ -15,7 +15,7 @@ const UserSearchModal = ({
   const onClick = (user) => {
     const newMember = {
       role,
-      name: `${user?.first_name} ${user?.last_name}`,
+      name: `${user?.name}`,
       individual_role: user?.individual_role,
       clubhouse: user?.clubs_house,
     };
