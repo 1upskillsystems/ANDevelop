@@ -1,14 +1,19 @@
 import { createContext, useEffect, useState } from "react";
-import { users as mockData } from "../mockData";
 
 export const UserContext = createContext([]);
 
 export function useUserContextValue() {
   const [users, setUsers] = useState([]);
 
+  const baseURL = "http://localhost:5001/users";
+
+  const fetchUsers = async () => {
+    const res = await fetch(baseURL);
+    const userList = await res.json();
+    setUsers(userList);
+  };
   useEffect(() => {
-    const data = mockData; // make call to DB
-    setUsers(data);
+    fetchUsers(); // make call to backend service
   }, []);
 
   return {
