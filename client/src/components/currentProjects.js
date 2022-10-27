@@ -80,8 +80,8 @@ function CurrentProjects() {
                     </Accordion.Body>
                 </Accordion.Item>
               );
-              
             }
+            else return null
           })}
         </Accordion>
       </section>

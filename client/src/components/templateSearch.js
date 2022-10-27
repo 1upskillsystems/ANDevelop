@@ -23,7 +23,7 @@ function TemplateSearch() {
               return (
                 <li
                   className={`template-search-item ${
-                    templateObj.id == elem.id ? "selected" : ""
+                    templateObj.id === elem.id ? "selected" : ""
                   }`}
                   onClick={() => setTemplateObj((templateObj = elem))}
                   key={i}
@@ -35,7 +35,7 @@ function TemplateSearch() {
           </ul>
         </div>
         <div className="template-search-details">
-          <div className={`wrapper${templateObj == 0 ? " hidden" : ""}`}>
+          <div className={`wrapper${templateObj === 0 ? " hidden" : ""}`}>
             <h2>{templateObj.template_name}</h2>
             <p>{templateObj.desciption}</p>
             <p>
@@ -55,7 +55,7 @@ function TemplateSearch() {
           <NavLink to={"/create-project"} state={{ templateInfo: templateObj }}>
             <Button
               variant="dark"
-              disabled={templateObj == 0 ? "disabled" : ""}
+              disabled={templateObj === 0 ? "disabled" : ""}
             >
               Assemble project
             </Button>

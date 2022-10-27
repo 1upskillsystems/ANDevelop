@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { UserContext } from "../contexts/userContext";
+// import { UserContext } from "../contexts/userContext";
 
 
 const SearchBar = ({handleClick}) => {
