@@ -7,54 +7,6 @@ const SearchBar = ({ handleClick }) => {
 
   const users = useContext(UserContext);
 
-  // mock user data
-  // const users = [
-  //     {
-  //       id: 1,
-  //       first_name: "Caelyb",
-  //       last_name: "str",
-  //       clubs_house: "Somerville",
-  //       individual_role: "str",
-  //       projects: [
-  //         { project_id: "int", role: "int" },
-  //         { project_id: "int", role: "int" },
-  //       ],
-  //     },
-  //     {
-  //       id: 2,
-  //       first_name: "Andrew",
-  //       last_name: "str",
-  //       clubs_house: "Almeida",
-  //       individual_role: "str",
-  //       projects: [
-  //         { project_id: "int", role: "int" },
-  //         { project_id: "int", role: "int" },
-  //       ],
-  //     },
-  //     {
-  //         id: 2,
-  //         first_name: "Cameron",
-  //         last_name: "str",
-  //         clubs_house: "Almeida",
-  //         individual_role: "str",
-  //         projects: [
-  //           { project_id: "int", role: "int" },
-  //           { project_id: "int", role: "int" },
-  //         ],
-  //       },
-  //       {
-  //         id: 2,
-  //         first_name: "Cameron",
-  //         last_name: "str",
-  //         clubs_house: "Somerville",
-  //         individual_role: "str",
-  //         projects: [
-  //           { project_id: "int", role: "int" },
-  //           { project_id: "int", role: "int" },
-  //         ],
-  //       },
-  //   ];
-
   function userAdd(user) {
     handleClick(user);
     // this function would ideally take user id and export so use could be added to a project
