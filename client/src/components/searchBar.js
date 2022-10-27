@@ -1,60 +1,13 @@
-import React, { useState } from "react";
-// import { UserContext } from "../contexts/userContext";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../contexts/userContext";
+import Button from "react-bootstrap/Button";
 import "./css/searchBar.css";
 
 const SearchBar = ({ handleClick }) => {
   const [searchInput, setSearchInput] = useState("");
   const [usersToDisplay, setUserToDisplay] = useState([]);
 
-  // const users = UserContext(UserContext);
-
-  // mock user data
-  const users = [
-    {
-      id: 1,
-      first_name: "Caelyb",
-      last_name: "str",
-      clubs_house: "Somerville",
-      individual_role: "str",
-      projects: [
-        { project_id: "int", role: "int" },
-        { project_id: "int", role: "int" },
-      ],
-    },
-    {
-      id: 2,
-      first_name: "Andrew",
-      last_name: "str",
-      clubs_house: "Almeida",
-      individual_role: "str",
-      projects: [
-        { project_id: "int", role: "int" },
-        { project_id: "int", role: "int" },
-      ],
-    },
-    {
-      id: 2,
-      first_name: "Cameron",
-      last_name: "str",
-      clubs_house: "Almeida",
-      individual_role: "str",
-      projects: [
-        { project_id: "int", role: "int" },
-        { project_id: "int", role: "int" },
-      ],
-    },
-    {
-      id: 2,
-      first_name: "Cameron",
-      last_name: "str",
-      clubs_house: "Somerville",
-      individual_role: "str",
-      projects: [
-        { project_id: "int", role: "int" },
-        { project_id: "int", role: "int" },
-      ],
-    },
-  ];
+  const users = useContext(UserContext);
 
   function userAdd(user) {
     handleClick(user);
@@ -73,8 +26,8 @@ const SearchBar = ({ handleClick }) => {
       // this filters based on search input and put filtered data into a list
 
       setUserToDisplay(
-        users.filter((user) => {
-          return user.first_name.toUpperCase().match(searchInput.toUpperCase());
+        users.users.filter((user) => {
+          return user.name.toUpperCase().match(searchInput.toUpperCase());
         })
       );
     }
@@ -84,17 +37,14 @@ const SearchBar = ({ handleClick }) => {
     <div>
       <input
         type="search"
-        placeholder="Search here"
+        placeholder="Name here"
         onChange={handleInput}
         value={searchInput}
-        id="search-bar"
       />
-
-      <button type="submit" onClick={handleChange} className="search-button">
+      <Button type="submit" onClick={handleChange} variant="dark">
         Search
-      </button>
-
-      {!!usersToDisplay.length && (
+      </Button>
+      {usersToDisplay.length > 0 ? (
         <table>
           <thead>
             <tr>
@@ -106,23 +56,23 @@ const SearchBar = ({ handleClick }) => {
             {usersToDisplay.map((user, index) => {
               return (
                 <tr key={index}>
-                  <td> {user.first_name} </td>
+                  <td> {user.name} </td>
                   <td> {user.clubs_house} </td>
                   <td>
-                    <button
+                    <Button
                       type="submit"
                       onClick={() => userAdd(user)}
-                      className="search-button"
+                      variant="dark"
                     >
                       Add User
-                    </button>
+                    </Button>
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-      )}
+      ) : null}
     </div>
   );
 };
