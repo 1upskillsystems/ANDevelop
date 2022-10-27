@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/userContext";
+import Button from "react-bootstrap/Button";
 
 const SearchBar = ({ handleClick }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -40,9 +41,9 @@ const SearchBar = ({ handleClick }) => {
         value={searchInput}
       />
 
-      <button type="submit" onClick={handleChange}>
+      <Button type="submit" onClick={handleChange} variant="dark">
         Search
-      </button>
+      </Button>
 
       <table>
         <thead>
