@@ -56,13 +56,18 @@ const CreateProject = () => {
 
   const onSubmit = (e) => {
     const time_start = new Date().valueOf();
+    const time_deadline = new Date(e.deadline).getTime()
+
     console.log("This will update the DB", {
-      project_id: templateInfo._id, // to check
-      template_id: templateInfo.template_id, // to check
+      project_id: 0, // to do
+      template_id: templateInfo?.template_id, // to check
+      project_name: templateInfo?.template_name,
+      project_desciption: templateInfo?.desciption,
       project_status: 0, // 0 initiated, 1 active, 2 archived
       project_progress: null, // seek clarification here
       time_start,
-      time_deadline: new Date(e.deadline).getTime(),
+      time_e: time_deadline - time_start,
+      time_deadline,
       team_members: members,
       team_size: members.length,
     });
