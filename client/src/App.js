@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
 import TemplateSearch from "./components/templateSearch";
-import CreateProject from "./components/createProject";
+import CreateProject from "./components/CreateProject";
 import CurrentProjects from "./components/currentProjects";
 import { 
   UserContext, 
@@ -17,7 +17,6 @@ import {
   TemplateContext,
   useTemplateContextValue,
 } from "./contexts/templateContext";
-import Test from "./Test";
 import "./App.css";
 import UserSearch from "./components/userSearch";
 
@@ -52,10 +51,6 @@ const App = () => {
               <Route
                 path="/create-project"
                 element={<CreateProject />}
-              />
-              <Route
-                path="/test"
-                element={<Test />}
               />
             </Routes>
           </main>
