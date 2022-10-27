@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import PageContainer from "../PageContainer";
-import { useLocation } from "react-router-dom";
-import AddRoleButtons from "./AddRoleButtons";
+import { NavLink, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import moment from "moment";
+
+import PageContainer from "../PageContainer";
+import AddRoleButtons from "./AddRoleButtons";
 
 import "../css/createProject.css";
 
@@ -56,7 +57,7 @@ const CreateProject = () => {
 
   const onSubmit = (e) => {
     const time_start = new Date().valueOf();
-    const time_deadline = new Date(e.deadline).getTime()
+    const time_deadline = new Date(e.deadline).getTime();
 
     console.log("This will update the DB", {
       project_id: 0, // to do
@@ -92,7 +93,7 @@ const CreateProject = () => {
             <li>
               Suggested time:{" "}
               <span className="bold-font">
-                {Math.round(templateInfo.time_esitmate/86400)} days
+                {Math.round(templateInfo.time_esitmate / 86400)} days
               </span>
             </li>
             <li>
@@ -135,7 +136,9 @@ const CreateProject = () => {
                 disabled={!membersAllAdded || !isDirty}
                 onClick={handleSubmit(onSubmit)}
               >
-                Start Project
+                <NavLink className="nav-link" to="/add-project">
+                  Start Project
+                </NavLink>
               </button>
             </div>
           </form>
