@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/userContext";
 import Button from "react-bootstrap/Button";
-import "./css/SearchBar.css";
+import "./css/searchBar.css";
 
 const SearchBar = ({ handleClick }) => {
   const [searchInput, setSearchInput] = useState("");
