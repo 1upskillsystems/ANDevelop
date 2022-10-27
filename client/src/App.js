@@ -16,6 +16,8 @@ import Test from "./Test";
 import "./App.css";
 import CurrentProjects from "./components/currentProjects";
 import UserSearch from "./components/userSearch";
+import ReviewTool from "./components/reviewTool";
+import ProjectReview from "./components/reviewProject";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
@@ -40,6 +42,14 @@ const App = () => {
               <Route
                 path="/userSearch"
                 element={<UserSearch />}
+              ></Route>
+              <Route
+                path="/Reviewtool"
+                element={<ReviewTool/>}
+              ></Route>
+              <Route
+                path="/ProjectReview"
+                element={<ProjectReview/>}
               ></Route>
               <Route 
                 path="/choose-existing-template" 

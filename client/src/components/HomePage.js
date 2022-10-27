@@ -6,6 +6,7 @@ import { FolderFill } from "react-bootstrap-icons";
 import { PlusCircleFill } from "react-bootstrap-icons";
 import { PersonFill } from "react-bootstrap-icons";
 import { ArchiveFill } from "react-bootstrap-icons";
+import { ChatSquareTextFill } from "react-bootstrap-icons";
 import PageContainer from "./PageContainer";
 
 const HomePage = () => {
@@ -20,6 +21,7 @@ const HomePage = () => {
             </NavLink>
           </Button>
         </div>
+
         <div className="menu-item">
           <PlusCircleFill size={90} />
           <Button variant="dark">
@@ -39,9 +41,15 @@ const HomePage = () => {
         </div>
 
         <div className="menu-item">
-          <PersonFill size={90} />
-          <Button variant="dark">Project Reviews</Button>
+          <ChatSquareTextFill size={90} />
+              <Button variant="dark">
+                <NavLink className="nav-link" to="/ReviewTool">
+                  Review Tool
+                </NavLink>
+              </Button>
+      
         </div>
+
         <div className="menu-item">
           <ArchiveFill size={90} />
           <Button variant="dark">Archived Projects</Button>
