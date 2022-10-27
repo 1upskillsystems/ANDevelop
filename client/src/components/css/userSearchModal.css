@@ -13,17 +13,29 @@
 #add-user-modal {
   border: solid black 4px;
   background-color: #dddddd;
-  min-width: 500px;
-  padding: 30px;
+  min-width: 600px;
+  padding: 30px 30px 50px 30px;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  max-height: 80vh;
+  flex-direction: column;
+}
+
+#add-user-modal > div {
+  width: 100%;
 }
 
 #modal-close-button {
-    margin-left: 20px;
-    border: solid black 3px;
-    border-radius: 3px;
-    background-color: white;
+  border-radius: 100%;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+#modal-close-button:hover > svg {
+  fill: #666666;
 }
