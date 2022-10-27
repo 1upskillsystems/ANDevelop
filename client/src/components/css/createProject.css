@@ -1,0 +1,76 @@
+#display-container {
+  display: flex;
+  flex-direction: row;
+  margin: -30px;
+  height: 100%;
+}
+
+#left-content {
+  background-color: #eeeeee;
+  width: 60%;
+  padding: 30px;
+}
+
+#right-sidebar-content {
+  background-color: #ea9999;
+  width: 40%;
+  border-left: solid black 3px;
+  padding: 30px;
+}
+
+#project-name {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.number-input-field {
+  margin: 0 10px;
+  width: 80px;
+}
+
+.date-input-field {
+  margin: 0 10px;
+}
+
+#deadline-input-field {
+  margin-bottom: 40px;
+}
+
+.input {
+  border: solid black 2px;
+  border-radius: 2px;
+}
+
+#create-proj-title {
+  margin-bottom: 30px;
+}
+
+#create-proj-submit-button {
+  display: block;
+  margin: 50px auto 20px auto;
+  border: solid black 3px;
+  border-radius: 50px;
+  padding: 5px 10px;
+  background-color: #ff0c04;
+  color: white;
+}
+#create-proj-submit-button:disabled {
+  background-color: #eeeeee;
+  color: black;
+  text-decoration: none !important;
+  opacity: 1 !important;
+}
+#create-proj-submit-button:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.bold-font {
+  font-weight: bold;
+}

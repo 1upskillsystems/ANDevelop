@@ -3,7 +3,13 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
 import TemplateSearch from "./components/templateSearch";
-import { UserContext, useUserContextValue } from "./contexts/userContext";
+import CreateProject from "./components/createProjectJourney/CreateProject";
+import CurrentProjects from "./components/currentProjects";
+import ArchivedProjects from "./components/archivedProjects";
+import { 
+  UserContext, 
+  useUserContextValue 
+} from "./contexts/userContext";
 import {
   ProjectContext,
   useProjectContextValue,
@@ -12,9 +18,7 @@ import {
   TemplateContext,
   useTemplateContextValue,
 } from "./contexts/templateContext";
-import Test from "./Test";
 import "./App.css";
-import CurrentProjects from "./components/currentProjects";
 import UserSearch from "./components/userSearch";
 
 const App = () => {
@@ -38,6 +42,10 @@ const App = () => {
                 element={<CurrentProjects />}
               ></Route>
               <Route
+                path="/archived-projects"
+                element={<ArchivedProjects />}
+              ></Route>
+              <Route
                 path="/userSearch"
                 element={<UserSearch />}
               ></Route>
@@ -46,8 +54,8 @@ const App = () => {
                 element={<TemplateSearch />}
               />
               <Route
-                path="/test"
-                element={<Test />}
+                path="/create-project"
+                element={<CreateProject />}
               />
             </Routes>
           </main>

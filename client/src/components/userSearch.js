@@ -1,17 +1,33 @@
 import React from "react";
 import SearchBar from "./searchBar";
-import { NavLink } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import PageContainer from "./PageContainer";
 
-function UserSearch() {
-  return (
-    
-     <div classname='App'>
-        <NavLink to="/">
-          <Button variant="dark">Close</Button>
-        </NavLink>
-        <h1>User Search</h1>
-       <SearchBar/>
-     </div>
-)}
-export default UserSearch
+function UserSearch({ handleClick, title }) {
+  const pathString = window.location.pathname;
+  const onUserSearch = pathString == "/userSearch";
+
+  if (onUserSearch) {
+    return (
+      <PageContainer 
+        pageTitle="User search"
+        buttonText="Close" 
+        buttonTo="/"
+      >
+        <div>
+          {<h1>{title || "User Search"}</h1>}
+          <SearchBar handleClick={handleClick} />
+        </div>
+      </PageContainer>
+    );
+  } else {
+    return (
+      <div>
+        {<h1>{title || "User Search"}</h1>}
+        <SearchBar handleClick={handleClick} />
+      </div>
+    );
+  }
+
+  
+}
+export default UserSearch;

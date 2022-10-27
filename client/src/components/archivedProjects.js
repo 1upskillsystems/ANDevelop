@@ -5,9 +5,9 @@ import { ProjectContext } from "../contexts/projectContext";
 import { TemplateContext } from "../contexts/templateContext";
 import Button from 'react-bootstrap/Button';
 import Background from "../assets/koala.jpg"
-import "./css/currentProjects.css";
+import "./css/archivedProjects.css";
 
-function CurrentProjects() {
+function ArchivedProjects() {
   const projects = useContext(ProjectContext);
   const templates = useContext(TemplateContext);
   
@@ -18,16 +18,9 @@ function CurrentProjects() {
     return matchedTemp;
   }
 
-  const calcTime = (started, deadline) => {
-    const current = Math.floor(Date.now() / 1000);
-    const total = +deadline - +started;
-    const elaps = current - started;
-    return Math.round((elaps / total) * 100) + "%";
-  }
-
   return (
     <PageContainer 
-      pageTitle="Active projects"
+      pageTitle="Archived projects"
       buttonText="Close" 
       buttonTo="/"
     >
@@ -35,28 +28,26 @@ function CurrentProjects() {
         <Accordion>
           {projects.projects.map((proj, i) => {
             
-            if (proj.project_status === 1) {
+            if (proj.project_status === 2) {
               const currentTemplate = findTemplate(proj.template_id);
-              const progress = calcTime(proj.time_start, proj.time_deadline);
 
               return (
                 <Accordion.Item eventKey={i} key={i}>
                     <Accordion.Header>
-                      <div className="current-projects-header-info">
+                      <div className="archived-projects-header-info">
                         <div className="project-header-info">
                           <div className="project-name">{proj.project_name}</div>
                           <div className="project-id">Project ID: {proj.project_id}</div>
                         </div>
                         <div className="progress-wrapper">
-                          <div className="progress-bar" style={{width: progress}}></div>
+                          <div className="progress-bar" style={{width: "100%"}}></div>
                         </div>
                       </div>
                     </Accordion.Header>
                     <Accordion.Body>
                       <p><strong>Template used:</strong> {currentTemplate.template_name}</p>
                       <div className="project-date-info">
-                        <div><p><strong>Date started:</strong> {new Date(proj.time_start * 1000).toLocaleString()}</p></div>
-                        <div><p><strong>Deadline:</strong> {new Date(proj.time_deadline * 1000).toLocaleString()}</p></div>
+                        <div><p><strong>Date completed:</strong> {new Date(proj.time_deadline * 1000).toLocaleString()}</p></div>
                       </div>
                       <p><strong>Project Description:</strong></p>
                       <p>{currentTemplate.desciption}</p>
@@ -91,8 +82,8 @@ function CurrentProjects() {
                     </Accordion.Body>
                 </Accordion.Item>
               );
+              
             }
-            else return null
           })}
         </Accordion>
       </section>
@@ -100,4 +91,4 @@ function CurrentProjects() {
   );
 }
 
-export default CurrentProjects;
+export default ArchivedProjects;
