@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../contexts/userContext";
 import Button from "react-bootstrap/Button";
+import "./css/SearchBar.css";
 
 const SearchBar = ({ handleClick }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -36,42 +37,42 @@ const SearchBar = ({ handleClick }) => {
     <div>
       <input
         type="search"
-        placeholder="Search here"
+        placeholder="Name here"
         onChange={handleInput}
         value={searchInput}
       />
-
       <Button type="submit" onClick={handleChange} variant="dark">
         Search
       </Button>
-
-      <table>
-        <thead>
-          <tr>
-            <th> Name </th>
-            <th> Club </th>
-          </tr>
-        </thead>
-        <tbody>
-          {usersToDisplay.map((user, index) => {
-            return (
-              <tr key={index}>
-                <td> {user.name} </td>
-                <td> {user.clubs_house} </td>
-                <td>
-                  <Button
-                    type="submit"
-                    onClick={() => userAdd(user)}
-                    variant="dark"
-                  >
-                    Add User
-                  </Button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      {usersToDisplay.length > 0 ? (
+        <table>
+          <thead>
+            <tr>
+              <th> Name </th>
+              <th> Club </th>
+            </tr>
+          </thead>
+          <tbody>
+            {usersToDisplay.map((user, index) => {
+              return (
+                <tr key={index}>
+                  <td> {user.name} </td>
+                  <td> {user.clubs_house} </td>
+                  <td>
+                    <Button
+                      type="submit"
+                      onClick={() => userAdd(user)}
+                      variant="dark"
+                    >
+                      Add User
+                    </Button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : null}
     </div>
   );
 };
