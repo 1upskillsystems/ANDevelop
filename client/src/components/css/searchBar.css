@@ -1,20 +1,8 @@
-#search-bar {
-  margin-top: 20px;
-  border: solid black 2px;
-  border-radius: 3px;
-  margin-right: 10px;
-}
-
-.search-button {
-  border-radius: 3px;
-  border: solid black 2px;
-  background-color: white;
-}
-
-table {
-  margin-top: 20px;
-}
-
+table,
+th,
 td {
-    min-width: 120px; 
+  border: 1px solid;
+  margin: 1%;
+  padding: 2px;
+  text-align: center;
 }
