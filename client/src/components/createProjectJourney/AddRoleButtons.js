@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PlusCircleFill } from "react-bootstrap-icons";
 import { Plus } from "react-bootstrap-icons";
-import Background from "../../koala.jpg";
+import Background from "../../assets/koala.jpg";
 import UserSearchModal from "./UserSearchModal";
 import "../css/roleButton.css";
 
@@ -10,7 +10,7 @@ const RoleButton = ({ red, setMembers, members, role }) => {
 
   const Icon = (props) =>
     red ? (
-      <PlusCircleFill {...props} color="#cf2a27" id="red-button" />
+      <PlusCircleFill {...props} color="#ff0c04" id="red-button" />
     ) : (
       <Plus {...props} color="black" id="white-button" />
     );
@@ -28,22 +28,32 @@ const RoleButton = ({ red, setMembers, members, role }) => {
   );
 };
 
-const AssignedRole = ({ role, name }) => {
+const AssignedRole = ({ setMembers, members, role, name }) => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div id="assigned-role-container">
-      <div
-        id="display-picture"
-        style={{
-          backgroundImage: `url(${Background})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
+      <UserSearchModal
+        {...{ setMembers, members, setOpenModal, openModal, role }}
       />
-      <div>
-        <p>{role}</p>
-        <p>{name}</p>
+      <div id="assigned-role-user">
+        <div
+          id="display-picture"
+          style={{
+            backgroundImage: `url(${Background})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        <div>
+          <p>{role}</p>
+          <p>{name}</p>
+        </div>
       </div>
+      <button onClick={() => setOpenModal(true)} id="change-user-button">
+        Change {role}
+      </button>
     </div>
   );
 };
@@ -68,7 +78,13 @@ const AddRoleButtons = ({ members, setMembers }) => {
         else
           return (
             <div key={index}>
-              <AssignedRole role={member.role} name={member.name} key={index} />
+              <AssignedRole
+                role={member.role}
+                name={member.name}
+                key={index}
+                setMembers={setMembers}
+                members={members}
+              />
               {index < 3 && <hr className="role-button-separator" />}
             </div>
           );

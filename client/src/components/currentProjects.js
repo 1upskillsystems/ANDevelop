@@ -4,7 +4,7 @@ import PageContainer from "./PageContainer";
 import { ProjectContext } from "../contexts/projectContext";
 import { TemplateContext } from "../contexts/templateContext";
 import Button from 'react-bootstrap/Button';
-import Background from "../koala.jpg"
+import Background from "../assets/koala.jpg"
 import "./css/currentProjects.css";
 
 function CurrentProjects() {
