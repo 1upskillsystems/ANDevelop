@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { UserContext } from "../contexts/userContext";
 
 
-const SearchBar = () => {
+const SearchBar = ({handleClick}) => {
     const [searchInput, setSearchInput] = useState("");
     const [usersToDisplay, setUserToDisplay] = useState([])
 
@@ -57,6 +57,7 @@ const users = [
   ];
 
 function userAdd(user) {
+handleClick(user)
 // this function would ideally take user id and export so use could be added to a project
 return console.log(user.id)
 }
@@ -106,7 +107,7 @@ return <div>
         <tr key = {index} >
             <td > {user.first_name} </td>
             <td > {user.clubs_house} </td>
-            <td> <button type = "submit" onClick={userAdd(user)}>  Add User </button> </td>
+            <td> <button type = "submit" onClick={()=>userAdd(user)}>  Add User </button> </td>
         </tr>
 )
 })}

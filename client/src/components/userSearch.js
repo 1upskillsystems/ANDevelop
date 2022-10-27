@@ -1,12 +1,12 @@
 import React from "react";
 import SearchBar from "./searchBar";
 
-function UserSearch() {
+function UserSearch({ handleClick }) {
   return (
-    
-     <div classname='App'>
-        <h1>User Search</h1>
-       <SearchBar/>
-     </div>
-)}
-export default UserSearch
+    <div className="App">
+      <h1>User Search</h1>
+      <SearchBar handleClick={handleClick} />
+    </div>
+  );
+}
+export default UserSearch;
