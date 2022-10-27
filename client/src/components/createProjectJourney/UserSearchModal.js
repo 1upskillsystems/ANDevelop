@@ -1,5 +1,6 @@
 import React from "react";
 import UserSearch from "../userSearch";
+import { XCircle } from "react-bootstrap-icons";
 
 import "../css/userSearchModal.css";
 
@@ -42,15 +43,15 @@ const UserSearchModal = ({
       }}
     >
       <div id="add-user-modal">
-        <UserSearch title={`Add ${role}`} handleClick={onClick} />
         <button
           id="modal-close-button"
           onClick={() => {
             setOpenModal(false);
           }}
         >
-          Close
+          <XCircle size={25} color="black" />
         </button>
+        <UserSearch title={`Add ${role}`} handleClick={onClick} />
       </div>
     </div>
   );
