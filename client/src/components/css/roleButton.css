@@ -49,8 +49,26 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  justify-content: space-between;
 }
 
 #assigned-role-container p {
   margin: 0;
+}
+
+#assigned-role-user {
+  display: flex;
+  flex-direction: row;
+}
+
+#change-user-button {
+  margin: 8px;
+  border: solid black 2px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+#change-user-button:hover {
+  text-decoration: underline;
+  background-color: #dddddd;
 }
