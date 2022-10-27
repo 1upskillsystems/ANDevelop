@@ -59,9 +59,13 @@ const SearchBar = ({ handleClick }) => {
                 <td> {user.name} </td>
                 <td> {user.clubs_house} </td>
                 <td>
-                  <button type="submit" onClick={() => userAdd(user)}>
+                  <Button
+                    type="submit"
+                    onClick={() => userAdd(user)}
+                    variant="dark"
+                  >
                     Add User
-                  </button>
+                  </Button>
                 </td>
               </tr>
             );
