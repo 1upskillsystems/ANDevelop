@@ -1,0 +1,29 @@
+#add-user-modal-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(102, 102, 102, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add-user-modal {
+  border: solid black 4px;
+  background-color: #dddddd;
+  min-width: 500px;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#modal-close-button {
+    margin-left: 20px;
+    border: solid black 3px;
+    border-radius: 3px;
+    background-color: white;
+}

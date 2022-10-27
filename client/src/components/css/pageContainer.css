@@ -1,9 +1,15 @@
 #page {
   background-color: #dddddd;
-  display: flex;
-  flex-direction: column;
   padding: 50px;
   height: 100vh;
+}
+
+#page-container {
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #page-header {

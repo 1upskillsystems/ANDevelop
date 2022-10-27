@@ -1,54 +1,9 @@
 import React, { useState } from "react";
 import { PlusCircleFill } from "react-bootstrap-icons";
 import { Plus } from "react-bootstrap-icons";
-import "./css/roleButton.css";
-import Background from "../koala.jpg";
-import UserSearch from "./userSearch";
-
-const UserSearchModal = ({
-  setMembers,
-  members,
-  setOpenModal,
-  openModal,
-  role,
-}) => {
-  const onClick = (user) => {
-    const newMember = {
-      role,
-      name: `${user?.name}`,
-      individual_role: user?.individual_role,
-      clubhouse: user?.clubs_house,
-    };
-
-    if (role === "Additional Developers") {
-      setMembers([...members, newMember]);
-      setOpenModal(false);
-    } else {
-      let newMemberArray = [...members];
-      const i = members.findIndex((member) => member.role === newMember.role);
-      if (i !== -1) {
-        newMemberArray[i] = newMember;
-      }
-
-      setMembers(newMemberArray);
-      setOpenModal(false);
-    }
-  };
-
-  if (!openModal) return null;
-  return (
-    <div>
-      <button
-        onClick={() => {
-          setOpenModal(false);
-        }}
-      >
-        Close
-      </button>
-      <UserSearch handleClick={onClick} />
-    </div>
-  );
-};
+import Background from "../../koala.jpg";
+import UserSearchModal from "./UserSearchModal";
+import "../css/roleButton.css";
 
 const RoleButton = ({ red, setMembers, members, role }) => {
   const [openModal, setOpenModal] = useState(false);
