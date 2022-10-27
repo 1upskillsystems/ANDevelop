@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
 import TemplateSearch from "./components/templateSearch";
-import CreateProject from "./components/CreateProject";
+import CreateProject from "./components/createProjectJourney/CreateProject";
 import CurrentProjects from "./components/currentProjects";
 import { 
   UserContext, 

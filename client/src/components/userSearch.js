@@ -1,10 +1,10 @@
 import React from "react";
 import SearchBar from "./searchBar";
 
-function UserSearch({ handleClick }) {
+function UserSearch({ handleClick, title }) {
   return (
     <div className="App">
-      <h1>User Search</h1>
+      {<h1>{title || "User Search"}</h1>}
       <SearchBar handleClick={handleClick} />
     </div>
   );
