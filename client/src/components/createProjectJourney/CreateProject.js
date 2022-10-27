@@ -24,25 +24,25 @@ const CreateProject = () => {
       role: "Scrum Master",
       name: null,
       individual_role: null,
-      clubhouse: null,
+      clubs_house: null,
     },
     {
       role: "Product Owner",
       name: null,
       individual_role: null,
-      clubhouse: null,
+      clubs_house: null,
     },
     {
       role: "Tech Lead",
       name: null,
       individual_role: null,
-      clubhouse: null,
+      clubs_house: null,
     },
     {
       role: "Developer",
       name: null,
       individual_role: null,
-      clubhouse: null,
+      clubs_house: null,
     },
   ]);
 
@@ -55,22 +55,36 @@ const CreateProject = () => {
     }
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     const time_start = new Date().valueOf();
     const time_deadline = new Date(e.deadline).getTime();
 
-    console.log("This will update the DB", {
-      project_id: 0, // to do
-      template_id: templateInfo?.template_id, // to check
+    const projectToAdd = {
+      project_id: null,
+      template_id: templateInfo?.template_id,
       project_name: templateInfo?.template_name,
       project_desciption: templateInfo?.desciption,
-      project_status: 0, // 0 initiated, 1 active, 2 archived
-      project_progress: null, // seek clarification here
+      project_status: 1,
+      project_progress: null,
       time_start,
       time_e: time_deadline - time_start,
       time_deadline,
       team_members: members,
       team_size: members.length,
+    };
+
+    console.log(projectToAdd);
+
+    await fetch("http://localhost:5001/project/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(projectToAdd),
+    }).catch((error) => {
+      window.alert(error);
+      console.log(error);
+      return;
     });
   };
 
