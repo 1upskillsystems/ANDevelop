@@ -42,9 +42,14 @@ const HomePage = () => {
           <PersonFill size={90} />
           <Button variant="dark">Project Reviews</Button>
         </div>
+
         <div className="menu-item">
           <ArchiveFill size={90} />
-          <Button variant="dark">Archived Projects</Button>
+          <Button variant="dark">
+            <NavLink className="nav-link" to="/archived-projects">
+              Archived Projects
+            </NavLink>
+          </Button>
         </div>
       </main>
     </PageContainer>
