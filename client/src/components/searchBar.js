@@ -6,8 +6,9 @@ import "./css/searchBar.css";
 const SearchBar = ({ handleClick }) => {
   const [searchInput, setSearchInput] = useState("");
   const [usersToDisplay, setUserToDisplay] = useState([]);
-
   const users = useContext(UserContext);
+  const pathString = window.location.pathname;
+  const onUserSearch = pathString == "/userSearch";
 
   function userAdd(user) {
     handleClick(user);
@@ -24,12 +25,13 @@ const SearchBar = ({ handleClick }) => {
   const handleChange = () => {
     if (searchInput.length > 0) {
       // this filters based on search input and put filtered data into a list
-
       setUserToDisplay(
         users.users.filter((user) => {
           return user.name.toUpperCase().match(searchInput.toUpperCase());
         })
       );
+    } else {
+      setUserToDisplay(users.users);
     }
   };
 
@@ -63,6 +65,7 @@ const SearchBar = ({ handleClick }) => {
                       type="submit"
                       onClick={() => userAdd(user)}
                       variant="dark"
+                      style={{display: `${onUserSearch ? "none" : "block"}`}}
                     >
                       Add User
                     </Button>
