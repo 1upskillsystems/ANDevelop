@@ -36,46 +36,50 @@ const SearchBar = ({ handleClick }) => {
   };
 
   return (
-    <div>
+    <div id="search-container">
       <input
         type="search"
         placeholder="Name here"
         onChange={handleInput}
         value={searchInput}
+        id="search-bar"
       />
-      <Button type="submit" onClick={handleChange} variant="dark">
+      <Button type="submit" onClick={handleChange} variant="dark" style={{marginTop: -3}}>
         Search
       </Button>
-      {usersToDisplay.length > 0 ? (
-        <table>
-          <thead>
-            <tr>
-              <th> Name </th>
-              <th> Club </th>
-            </tr>
-          </thead>
-          <tbody>
-            {usersToDisplay.map((user, index) => {
-              return (
-                <tr key={index}>
-                  <td> {user.name} </td>
-                  <td> {user.clubs_house} </td>
-                  <td>
-                    <Button
-                      type="submit"
-                      onClick={() => userAdd(user)}
-                      variant="dark"
-                      style={{display: `${onUserSearch ? "none" : "block"}`}}
+      {!!usersToDisplay.length && (
+        <div id="scrollable-area">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Club</th>
+              </tr>
+            </thead>
+            <tbody>
+              {usersToDisplay.map((user, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{user.name}</td>
+                    <td>{user.clubs_house}</td>
+                    <td>
+                      <Button
+                        type="submit"
+                        onClick={() => userAdd(user)}
+                        variant="dark"
+                        id="add-user-button"
+                        style={{display: `${onUserSearch ? "none" : "block"}`}}
                     >
-                      Add User
-                    </Button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      ) : null}
+                        Add User
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };
