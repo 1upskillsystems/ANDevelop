@@ -8,6 +8,7 @@ const NewProjectWindow = () => {
   return (
     <PageContainer pageTitle="Create Project" buttonText="Close" buttonTo="/">
       Well done, your project has been added to the list.
+      <br />
       <Button variant="dark">
         <NavLink className="nav-link" to="/current-projects">
           Show active projects

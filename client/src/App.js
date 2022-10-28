@@ -18,6 +18,9 @@ import {
 } from "./contexts/templateContext";
 import "./App.css";
 import UserSearch from "./components/userSearch";
+import ReviewTool from "./components/reviewTool";
+import ProjectReview from "./components/reviewProject";
+import IndividualFeedback from "./components/individualFeedback";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
@@ -43,9 +46,20 @@ const App = () => {
                 path="/archived-projects"
                 element={<ArchivedProjects />}
               ></Route>
-              <Route path="/userSearch" element={<UserSearch />}></Route>
               <Route
-                path="/choose-existing-template"
+                path="/ReviewTool"
+                element={<ReviewTool/>}
+              ></Route>
+              <Route
+                path="/ProjectReview"
+                element={<ProjectReview/>}
+              ></Route>
+                <Route
+                path="/IndividualFeedback"
+                element={<IndividualFeedback/>}
+              ></Route>
+              <Route 
+                path="/choose-existing-template" 
                 element={<TemplateSearch />}
               />
               <Route path="/create-project" element={<CreateProject />} />
