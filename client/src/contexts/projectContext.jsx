@@ -1,14 +1,19 @@
 import { createContext, useEffect, useState } from "react";
-import { projects as mockData } from "../mockData";
 
 export const ProjectContext = createContext([]);
 
 export function useProjectContextValue() {
   const [projects, setProjects] = useState([]);
 
+  const baseURL = "http://localhost:5001/projects";
+  const fetchProjects = async () => {
+    const res = await fetch(baseURL);
+    const projectList = await res.json();
+    setProjects(projectList);
+  };
+
   useEffect(() => {
-    const data = mockData; // make call to DB
-    setProjects(data);
+    fetchProjects(); // make call to backend service
   }, []);
 
   return {

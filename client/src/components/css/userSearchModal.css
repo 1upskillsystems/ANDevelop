@@ -1,0 +1,41 @@
+#add-user-modal-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(102, 102, 102, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#add-user-modal {
+  border: solid black 4px;
+  background-color: #dddddd;
+  min-width: 600px;
+  padding: 30px 30px 50px 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-height: 80vh;
+  flex-direction: column;
+}
+
+#add-user-modal > div {
+  width: 100%;
+}
+
+#modal-close-button {
+  border-radius: 100%;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+#modal-close-button:hover > svg {
+  fill: #666666;
+}

@@ -3,6 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import TemplateRoute from "./components/templateRoute";
 import TemplateSearch from "./components/templateSearch";
+import CreateProject from "./components/createProjectJourney/CreateProject";
+import CurrentProjects from "./components/currentProjects";
+import ArchivedProjects from "./components/archivedProjects";
+import NewProjectWindow from "./components/createProjectJourney/NewProjectWindow";
 import { UserContext, useUserContextValue } from "./contexts/userContext";
 import {
   ProjectContext,
@@ -12,9 +16,7 @@ import {
   TemplateContext,
   useTemplateContextValue,
 } from "./contexts/templateContext";
-import Test from "./Test";
 import "./App.css";
-import CurrentProjects from "./components/currentProjects";
 import UserSearch from "./components/userSearch";
 import ReviewTool from "./components/reviewTool";
 import ProjectReview from "./components/reviewProject";
@@ -41,8 +43,8 @@ const App = () => {
                 element={<CurrentProjects />}
               ></Route>
               <Route
-                path="/userSearch"
-                element={<UserSearch />}
+                path="/archived-projects"
+                element={<ArchivedProjects />}
               ></Route>
               <Route
                 path="/Reviewtool"
@@ -60,10 +62,8 @@ const App = () => {
                 path="/choose-existing-template" 
                 element={<TemplateSearch />}
               />
-              <Route
-                path="/test"
-                element={<Test />}
-              />
+              <Route path="/create-project" element={<CreateProject />} />
+              <Route path="/add-project" element={<NewProjectWindow />} />
             </Routes>
           </main>
         </TemplateContext.Provider>

@@ -1,14 +1,19 @@
 import { createContext, useEffect, useState } from "react";
-import { templates as mockData } from "../mockData";
 
 export const TemplateContext = createContext([]);
 
 export function useTemplateContextValue() {
   const [templates, setTemplates] = useState([]);
 
+  const baseURL = "http://localhost:5001/templates";
+  const fetchTemplates = async () => {
+    const res = await fetch(baseURL);
+    const templateList = await res.json();
+    setTemplates(templateList);
+  };
+
   useEffect(() => {
-    const data = mockData; // make call to DB
-    setTemplates(data);
+    fetchTemplates(); // make call to backend service
   }, []);
 
   return {

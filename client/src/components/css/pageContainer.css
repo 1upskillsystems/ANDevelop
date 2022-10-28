@@ -1,9 +1,15 @@
 #page {
   background-color: #dddddd;
-  display: flex;
-  flex-direction: column;
   padding: 50px;
   height: 100vh;
+}
+
+#page-container {
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #page-header {
@@ -11,7 +17,8 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 60px;
-  color: #cf2a27;
+  color: #ff0c04;
+  height: 60px;
 }
 
 #and-develop {
@@ -33,8 +40,6 @@
   border: solid black 4px;
   border-radius: 3px;
   background-color: #dddddd;
-  min-height: 50vh;
-  padding: 30px;
 }
 
 #button {
