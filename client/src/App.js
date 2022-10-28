@@ -6,10 +6,8 @@ import TemplateSearch from "./components/templateSearch";
 import CreateProject from "./components/createProjectJourney/CreateProject";
 import CurrentProjects from "./components/currentProjects";
 import ArchivedProjects from "./components/archivedProjects";
-import { 
-  UserContext, 
-  useUserContextValue 
-} from "./contexts/userContext";
+import NewProjectWindow from "./components/createProjectJourney/NewProjectWindow";
+import { UserContext, useUserContextValue } from "./contexts/userContext";
 import {
   ProjectContext,
   useProjectContextValue,
@@ -45,18 +43,13 @@ const App = () => {
                 path="/archived-projects"
                 element={<ArchivedProjects />}
               ></Route>
+              <Route path="/userSearch" element={<UserSearch />}></Route>
               <Route
-                path="/userSearch"
-                element={<UserSearch />}
-              ></Route>
-              <Route 
-                path="/choose-existing-template" 
+                path="/choose-existing-template"
                 element={<TemplateSearch />}
               />
-              <Route
-                path="/create-project"
-                element={<CreateProject />}
-              />
+              <Route path="/create-project" element={<CreateProject />} />
+              <Route path="/add-project" element={<NewProjectWindow />} />
             </Routes>
           </main>
         </TemplateContext.Provider>

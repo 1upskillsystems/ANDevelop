@@ -18,6 +18,7 @@
   justify-content: space-between;
   margin-bottom: 60px;
   color: #ff0c04;
+  height: 60px;
 }
 
 #and-develop {
@@ -39,8 +40,6 @@
   border: solid black 4px;
   border-radius: 3px;
   background-color: #dddddd;
-  min-height: 50vh;
-  padding: 30px;
 }
 
 #button {

@@ -1,0 +1,31 @@
+#template-route-header-section {
+    background-color: #9fc5f8;
+    border-bottom: solid black 5px;
+    align-items: center;
+    display: flex;
+}
+#template-route-header-section > h2 {
+    display: block;
+    margin: 0 auto;
+}
+
+#create-template, #choose-template, #template-route-header-section {
+    padding: 30px;
+}
+
+#template-route-content-section {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+#create-template {
+    border-right: solid black 5px;
+    height: 100%;
+}
+
+.template-route-button {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    color: transparent !important;
+}
