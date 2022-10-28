@@ -40,8 +40,6 @@
   border: solid black 4px;
   border-radius: 3px;
   background-color: #dddddd;
-  min-height: 50vh;
-  padding: 30px;
 }
 
 #button {

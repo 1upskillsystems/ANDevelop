@@ -93,6 +93,7 @@ const CreateProject = () => {
       pageTitle="Create Project"
       buttonText="Back"
       buttonTo="/choose-existing-template"
+      noPadding
     >
       <div id="display-container">
         <div id="left-content">

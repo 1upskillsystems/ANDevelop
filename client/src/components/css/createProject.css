@@ -1,7 +1,6 @@
 #display-container {
   display: flex;
   flex-direction: row;
-  margin: -30px;
   height: 100%;
 }
 

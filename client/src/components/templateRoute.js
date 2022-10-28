@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import PageContainer from "./PageContainer";
+import Button from "react-bootstrap/Button";
+import "./css/templateRoute.css";
 
 function TemplateRoute() {
   return (
@@ -8,14 +10,18 @@ function TemplateRoute() {
       pageTitle="Create New Project"
       buttonText="Close"
       buttonTo="/"
+      noPadding
     >
-      <section>
-        <div>
+      <div id="template-route-section">
+        <div id="template-route-header-section">
+          <h2>Create or select a template</h2>
+        </div>
+        <div id="template-route-content-section">
           <section id="create-template">
-            <NavLink to="">
-              <button className="" disabled>
+            <NavLink to="" className="template-route-button">
+              <Button disabled variant="dark">
                 Create a new template
-              </button>
+              </Button>
             </NavLink>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -28,8 +34,11 @@ function TemplateRoute() {
             </p>
           </section>
           <section id="choose-template">
-            <NavLink to="/choose-existing-template">
-              <button className="">Select exiting template</button>
+            <NavLink
+              to="/choose-existing-template"
+              className="template-route-button"
+            >
+              <Button variant="dark">Select exiting template</Button>
             </NavLink>
             <p>
               Mattis pellentesque id nibh tortor id aliquet lectus. Ut sem nulla
@@ -42,7 +51,7 @@ function TemplateRoute() {
             </p>
           </section>
         </div>
-      </section>
+      </div>
     </PageContainer>
   );
 }
