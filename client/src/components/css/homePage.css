@@ -1,0 +1,16 @@
+#homepage-heading {
+  width: 100%;
+}
+
+#homepage-menu-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#homepage-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0;
+}
