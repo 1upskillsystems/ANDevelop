@@ -33,7 +33,7 @@ const users = [
 
 function IndividualFeedback() {
   return (
-    <PageContainer buttonText="Close" buttonTo="/">
+    <PageContainer buttonText="Close" buttonTo="/ReviewTool">
       <section>
         <h1> {users[0].first_name}: {users[0].reviews} </h1>
       </section>

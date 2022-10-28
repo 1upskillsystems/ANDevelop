@@ -47,7 +47,7 @@ const App = () => {
                 element={<ArchivedProjects />}
               ></Route>
               <Route
-                path="/Reviewtool"
+                path="/ReviewTool"
                 element={<ReviewTool/>}
               ></Route>
               <Route
