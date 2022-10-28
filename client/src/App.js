@@ -64,6 +64,7 @@ const App = () => {
               />
               <Route path="/create-project" element={<CreateProject />} />
               <Route path="/add-project" element={<NewProjectWindow />} />
+              <Route path="/userSearch" element={<UserSearch />} />
             </Routes>
           </main>
         </TemplateContext.Provider>
