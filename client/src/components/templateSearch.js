@@ -24,7 +24,9 @@ function TemplateSearch() {
             {templates.map((elem, i) => (
               <li
                 className={`template-search-item ${
-                  templateObj?.id === elem.id ? "selected" : ""
+                  templateObj?.template_id === elem.template_id
+                    ? "selected"
+                    : ""
                 }`}
                 onClick={() => setTemplateObj((templateObj = elem))}
                 key={i}
@@ -45,7 +47,8 @@ function TemplateSearch() {
               <hr />
               <h2>Recommendations</h2>
               <p>
-                <strong>Expected duration:</strong> {Math.round(templateObj.time_esitmate / 86400)} days
+                <strong>Expected duration:</strong>{" "}
+                {Math.round(templateObj.time_esitmate / 86400)} days
               </p>
               <p>
                 <strong>Team size:</strong> {templateObj.team_estimate}
