@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import PageContainer from "./PageContainer";
+import { Person } from "react-bootstrap-icons";
 
 const users = [
     {
@@ -35,7 +36,10 @@ function IndividualFeedback() {
   return (
     <PageContainer buttonText="Close" buttonTo="/ReviewTool">
       <section>
-        <h1> {users[0].first_name}: {users[0].reviews} </h1>
+
+        <Person size={50}/> <h3> {users[0].first_name}: {users[0].reviews} </h3>
+
+        <Person size={50}/> <h3> {users[1].first_name}: {users[1].reviews} </h3>
       </section>
     </PageContainer>
   );
