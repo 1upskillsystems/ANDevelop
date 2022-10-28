@@ -14,9 +14,18 @@ body {
 }
 
 #menu-container {
-  width: 50%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-left: 25%;
+  flex-direction: row;
+}
+
+#menu-container #info {
+  width: 40%;
+}
+
+#menu-container #buttons {
+  width: 60%;
+}
+
+#menu-container #buttons div {
+  margin-bottom: 20px;
 }

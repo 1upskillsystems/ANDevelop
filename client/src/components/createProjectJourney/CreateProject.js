@@ -56,8 +56,8 @@ const CreateProject = () => {
   }
 
   const onSubmit = async (e) => {
-    const time_start = new Date().valueOf();
-    const time_deadline = new Date(e.deadline).getTime();
+    const time_start = new Date().valueOf() / 1000;
+    const time_deadline = new Date(e.deadline).valueOf() / 1000;
 
     const projectToAdd = {
       project_id: null,
