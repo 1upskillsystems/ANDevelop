@@ -28,6 +28,5 @@ function UserSearch({ handleClick, title }) {
     );
   }
 
-  
 }
 export default UserSearch;
