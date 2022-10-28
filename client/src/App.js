@@ -18,6 +18,7 @@ import CurrentProjects from "./components/currentProjects";
 import UserSearch from "./components/userSearch";
 import ReviewTool from "./components/reviewTool";
 import ProjectReview from "./components/reviewProject";
+import IndividualFeedback from "./components/individualFeedback";
 
 const App = () => {
   const loginContextValue = useUserContextValue();
@@ -50,6 +51,10 @@ const App = () => {
               <Route
                 path="/ProjectReview"
                 element={<ProjectReview/>}
+              ></Route>
+                <Route
+                path="/IndividualFeedback"
+                element={<IndividualFeedback/>}
               ></Route>
               <Route 
                 path="/choose-existing-template" 

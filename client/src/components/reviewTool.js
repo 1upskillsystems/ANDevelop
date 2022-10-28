@@ -21,7 +21,7 @@ function ReviewTool() {
         <div className="menu-item">
           <PersonCheck size={90} />
           <Button variant="dark">
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav-link" to="/IndividualFeedback">
               Individual Feedback
             </NavLink>
           </Button>
