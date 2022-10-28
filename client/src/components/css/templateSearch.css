@@ -21,8 +21,9 @@
     width: 50%;
 }
 
-.selected {
-    background-color: #eaeaea;
+.selected > button {
+    background-color: #666666;
+    color: white;
 }
 
 h2 {
