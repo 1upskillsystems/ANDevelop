@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <PageContainer pageTitle="Welcome">
       <main id="homepage-menu-container">
-        <h1>Introducing ANDevelop</h1>
+        <h1 id="homepage-heading">Introducing ANDevelop</h1>
 
         <div id="homepage-buttons">
           <div className="menu-item">
