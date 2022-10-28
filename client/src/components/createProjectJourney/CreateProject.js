@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import PageContainer from "../PageContainer";
-import { useLocation } from "react-router-dom";
-import AddRoleButtons from "./AddRoleButtons";
+import { NavLink, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import moment from "moment";
+
+import PageContainer from "../PageContainer";
+import AddRoleButtons from "./AddRoleButtons";
 
 import "../css/createProject.css";
 
@@ -23,25 +24,25 @@ const CreateProject = () => {
       role: "Scrum Master",
       name: null,
       individual_role: null,
-      clubhouse: null,
+      clubs_house: null,
     },
     {
       role: "Product Owner",
       name: null,
       individual_role: null,
-      clubhouse: null,
+      clubs_house: null,
     },
     {
       role: "Tech Lead",
       name: null,
       individual_role: null,
-      clubhouse: null,
+      clubs_house: null,
     },
     {
       role: "Developer",
       name: null,
       individual_role: null,
-      clubhouse: null,
+      clubs_house: null,
     },
   ]);
 
@@ -54,22 +55,36 @@ const CreateProject = () => {
     }
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     const time_start = new Date().valueOf();
-    const time_deadline = new Date(e.deadline).getTime()
+    const time_deadline = new Date(e.deadline).getTime();
 
-    console.log("This will update the DB", {
-      project_id: 0, // to do
-      template_id: templateInfo?.template_id, // to check
+    const projectToAdd = {
+      project_id: null,
+      template_id: templateInfo?.template_id,
       project_name: templateInfo?.template_name,
       project_desciption: templateInfo?.desciption,
-      project_status: 0, // 0 initiated, 1 active, 2 archived
-      project_progress: null, // seek clarification here
+      project_status: 1,
+      project_progress: null,
       time_start,
       time_e: time_deadline - time_start,
       time_deadline,
       team_members: members,
       team_size: members.length,
+    };
+
+    console.log(projectToAdd);
+
+    await fetch("http://localhost:5001/project/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(projectToAdd),
+    }).catch((error) => {
+      window.alert(error);
+      console.log(error);
+      return;
     });
   };
 
@@ -92,7 +107,7 @@ const CreateProject = () => {
             <li>
               Suggested time:{" "}
               <span className="bold-font">
-                {Math.round(templateInfo.time_esitmate/86400)} days
+                {Math.round(templateInfo.time_esitmate / 86400)} days
               </span>
             </li>
             <li>
@@ -135,7 +150,9 @@ const CreateProject = () => {
                 disabled={!membersAllAdded || !isDirty}
                 onClick={handleSubmit(onSubmit)}
               >
-                Start Project
+                <NavLink className="nav-link" to="/add-project">
+                  Start Project
+                </NavLink>
               </button>
             </div>
           </form>

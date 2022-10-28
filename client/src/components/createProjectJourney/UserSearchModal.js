@@ -16,7 +16,7 @@ const UserSearchModal = ({
       role,
       name: `${user?.name}`,
       individual_role: user?.individual_role,
-      clubhouse: user?.clubs_house,
+      clubs_house: user?.clubs_house,
     };
 
     if (role === "Additional Developers") {
